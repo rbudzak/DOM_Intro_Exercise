@@ -60,11 +60,24 @@ function numbers(charCode, e) {
   }
 }
 
-function konamiCode(charCode, e) {
-  console.log(charCode);
+var arrKonCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+function konamiCode(charCode, arrKonami, e) {
+  if (charCode === arrKonami[0]){
+    arrKonami.shift();
+    if (arrKonami.length === 0){
+      alert('YOU ARE AN EVENT HANDLER GURUUUUUUUUU!');
+      return [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+    }
+    else{
+      
+      return arrKonami;
+    }
+  }
+  return [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
 }
+  
 
 document.addEventListener('keydown', function(e){ var charCode = event.keyCode;
       numbers(charCode);
-      konamiCode(charCode);
+      arrKonCode = konamiCode(charCode, arrKonCode);
     });
