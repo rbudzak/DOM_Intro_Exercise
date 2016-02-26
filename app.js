@@ -53,3 +53,18 @@ function panic(e) {
 }
 divSize.addEventListener('mouseenter', resize);
 document.querySelector('input').addEventListener('click', panic);
+
+function numbers(charCode, e) {
+  if (charCode > 47 && charCode < 58){
+    alert("I HATE NUMBERZZZ!");
+  }
+}
+
+function konamiCode(charCode, e) {
+  console.log(charCode);
+}
+
+document.addEventListener('keydown', function(e){ var charCode = event.keyCode;
+      numbers(charCode);
+      konamiCode(charCode);
+    });
